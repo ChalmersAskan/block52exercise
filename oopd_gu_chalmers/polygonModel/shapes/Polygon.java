@@ -11,7 +11,7 @@ public abstract class Polygon extends Shape {
 
     protected Polygon(int x, int y){ super(x,y); }
 
-    public void paint(Graphics g){
+    public void paint(Graphics g){ //A view function in a model...
         List<Point> corners = getCorners();
         // first and last point should be the same
         corners.add(corners.get(0));

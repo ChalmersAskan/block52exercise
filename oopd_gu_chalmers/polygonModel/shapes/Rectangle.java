@@ -2,7 +2,7 @@ package oopd_gu_chalmers.polygonModel.shapes;
 
 import java.awt.*;
 
-/**
+/*
  * Created by Niklas on 2016-02-14.
  */
 public class Rectangle extends Polygon {

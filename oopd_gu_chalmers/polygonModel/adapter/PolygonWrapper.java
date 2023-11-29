@@ -18,7 +18,7 @@ import java.awt.*;
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paint(Graphics g) { //A view function in a model?
         wrappedPolygon.paint(g);
     }
 

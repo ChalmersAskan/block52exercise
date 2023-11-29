@@ -1,13 +1,13 @@
 package oopd_gu_chalmers;
 
 /* This is now all we (can) use from the sub-package */
-import oopd_gu_chalmers.polygonModel.polygon.Polygon;
-import oopd_gu_chalmers.polygonModel.polygon.PolygonFactory;
+//import oopd_gu_chalmers.polygonModel.polygon.Polygon;
+//import oopd_gu_chalmers.polygonModel.polygon.PolygonFactory;
 
 /* By commenting out the imports above, and instead importing the adapter package,
  * we effectively switch to using the DIT953.model.shapes package.
  */
-//import DIT953.model.adapter.*;
+import oopd_gu_chalmers.polygonModel.adapter.*;
 
 import javax.swing.*;
 import java.awt.Graphics;
@@ -19,7 +19,8 @@ public class DrawPolygons extends JComponent{
     public int ticker = 0;
     public JFrame frame;
 
-    public DrawPolygons(){
+    public DrawPolygons(){ //Arraylist<Polygon> polygons){
+        // this.polygons = polygons
         polygons = new ArrayList<>(10);
 
         polygons.add(PolygonFactory.createSquare(50,50));
@@ -37,7 +38,8 @@ public class DrawPolygons extends JComponent{
         if (ticker > 10) {
             direction = !direction;
             ticker = 0;
-        }
+        } //Model function until here
+
         repaint();
     }
 
@@ -62,7 +64,8 @@ public class DrawPolygons extends JComponent{
         try {
             while (true) {
                 Thread.sleep(500);
-                polygons.update();
+                polygons.update(); //model.polygon.update();
+                //View.Update.repaint();
             }
         } catch (InterruptedException e) {}
 
